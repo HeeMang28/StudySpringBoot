@@ -77,6 +77,6 @@ public class ProductControllerTest {
                 .andExpect(jsonPath("$.stock").exists())
                 .andDo(print());
 
-        verify(productService.saveProduct(new ProductDto("pen", 5000, 2000));
+        verify(productService).saveProduct(new ProductDto("pen", 5000, 2000));
     }
 }
