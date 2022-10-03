@@ -36,7 +36,7 @@ public class ProductController {
 
     @PutMapping()
     public ResponseEntity<ProductResponseDto> changeProductName(
-            @RequestBody ChangeProductNameDtoo changeProductNameDto) throws Exception {
+            @RequestBody ChangeProductNameDto changeProductNameDto) throws Exception {
         ProductResponseDto productResponseDto = productService.changeProductName(
                 changeProductNameDto.getNumber(),
                 changeProductNameDto.getName());
