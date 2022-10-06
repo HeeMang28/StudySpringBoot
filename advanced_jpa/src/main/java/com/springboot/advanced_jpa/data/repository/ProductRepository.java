@@ -3,6 +3,7 @@ package com.springboot.advanced_jpa.data.repository;
 import com.springboot.advanced_jpa.data.entity.Product;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
@@ -111,5 +112,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByNameOrderByPriceAscStockDesc(String name);
 
     List<Product> findByName(String name, Sort sort);
+
+    @Query("SELECT p FROM Product AS p WHERE p.name = ?1")
+    List<Product> findByName(String name);
     */
 }
